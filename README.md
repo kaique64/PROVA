@@ -21,6 +21,7 @@
   - **Autor:** Yago Bastos
 
 ### **Requisito: Circuito divisor de Divisor de tensão**:
+**Autor:** Matheus Andreoli
 - Solicitar a tensão de entrada (Vs);
 - Solicitar a tensão de saída (Vm);
 - Solicitar a corrente máxima no circuito;
@@ -29,6 +30,7 @@
 - Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Resistor de LED**:
+**Autor:** Kaique Henrique
 - Solicitar a tensão de alimentação VF;
 - Solicitar a corrente no LED;
 - Solicitar a tensão no LED;
@@ -37,6 +39,7 @@
 - Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Transistor como Chave**:
+**Autor:** Matheus Andreoli
 - Solicitar VS;
 - Solicitar VCC;
 - Solicitar Ic;
@@ -46,6 +49,7 @@
 - Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Polarização básica do transistor**:
+**Autor:** Yago Bastos
 - Solicitar o valor de VS;
 - Solicitar o valor de VCC;
 - Solicitar o valor de VCE;
@@ -57,6 +61,7 @@
 - Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Polarização por divisor de tensão na base do transistor**:
+**Autor:** Kaique Henrique
 - Solicitar o valor de VCC;
 - Solicitar o valor de VCE;
 - Solicitar o valor de VRE;
@@ -68,6 +73,7 @@
 - Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Montagem Amplificador Inversor com amp-op**:
+**Autor:** Matheus Sales
 - Solicitar o valor de Vi;
 - Solicitar o valor de Vo;
 - Solicitar o valor de R1;
@@ -76,12 +82,16 @@
 - Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Montagem Amplificador não inversor com amp-op**:
+**Autor:** Matheus Sales
 - Solicitar o valor de Vi;
 - Solicitar o valor de Vo;
 - Solicitar o valor de R1;
 - Calcular e retornar o valor de Rf;
 - Tratar os possíveis erros;
 - Ao final, aguardar uma tecla e voltar para o menu;
+
+### **Requisito: Menu**:
+**Autor:** Yago Bastos
 
 # Padrões de saída
 - Valores de entrada devem ser sempre float
