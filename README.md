@@ -5,19 +5,19 @@
 # **Requisitos**:
 - Circuito divisor de Divisor de tensão
   - **Autor:** Matheus Andreoli
-- Resistor de LED;
+- Resistor de LED
   - **Autor:** Kaique Henrique
-- Transistor como Chave;
+- Transistor como Chave
   - **Autor:** Matheus Andreoli
-- Polarização básica do transistor;
+- Polarização básica do transistor
   - **Autor:** Yago Bastos
-- Polarização por divisor de tensão na base do transistor;
+- Polarização por divisor de tensão na base do transistor
   - **Autor:** Kaique Henrique
-- Montagem Amplificador Inversor com amp-op;
+- Montagem Amplificador Inversor com amp-op
   - **Autor:** Matheus Sales
-- Montagem Amplificador não inversor com amp-op;
+- Montagem Amplificador não inversor com amp-op
   - **Autor:** Matheus Sales
-- Menu;
+- Menu
   - **Autor:** Yago Bastos
 
 ### **Requisito: Circuito divisor de Divisor de tensão**:
