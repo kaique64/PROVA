@@ -3,14 +3,22 @@
 - Desenvolver um programa em linguagem C para auxílio de projeto de circuitos 	eletroeletrônicos;
 
 # **Requisitos**:
-- Circuito divisor de Divisor de tensão (**Autor:** Matheus Andreoli);
-- Resistor de LED (**Autor:** Kaique Henrique);
-- Transistor como Chave (**Autor:** Matheus Andreoli);
-- Polarização básica do transistor (**Autor:** Yago Bastos);
-- Polarização por divisor de tensão na base do transistor (**Autor:** Kaique Henrique);
-- Montagem Amplificador Inversor com amp-op (**Autor:** Matheus Sales);
-- Montagem Amplificador não inversor com amp-op (**Autor:** Matheus Sales);
-- Sair do programa (Menu) (**Autor:** Yago Bastos);
+- Circuito divisor de Divisor de tensão
+  - **Autor:** Matheus Andreoli
+- Resistor de LED;
+  - **Autor:** Kaique Henrique
+- Transistor como Chave;
+  - **Autor:** Matheus Andreoli
+- Polarização básica do transistor;
+  - **Autor:** Yago Bastos
+- Polarização por divisor de tensão na base do transistor;
+  - **Autor:** Kaique Henrique
+- Montagem Amplificador Inversor com amp-op;
+  - **Autor:** Matheus Sales
+- Montagem Amplificador não inversor com amp-op;
+  - **Autor:** Matheus Sales
+- Menu;
+  - **Autor:** Yago Bastos
 
 ### **Requisito: Circuito divisor de Divisor de tensão**:
 - Solicitar a tensão de entrada (Vs);
