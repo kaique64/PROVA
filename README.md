@@ -18,7 +18,7 @@
 - Solicitar a corrente máxima no circuito;
 - Calcular e Responder com o valor do R1 e do R2;
 - Tratar devidamente os possíveis erros;
-  - Ao final, aguardar uma tecla e voltar para o menu;
+- Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Resistor de LED**:
 - Solicitar a tensão de alimentação VF;
@@ -26,7 +26,7 @@
 - Solicitar a tensão no LED;
 - Calcular e responder com o valor do RLED; 
 - Tratar os possíveis erros;
-  - Ao final, aguardar uma tecla e voltar para o menu;
+- Ao final, aguardar uma tecla e voltar para o menu;
 
 ### **Requisito: Transistor como Chave**:
 - Solicitar VS;
