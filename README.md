@@ -3,14 +3,14 @@
 - Desenvolver um programa em linguagem C para auxílio de projeto de circuitos 	eletroeletrônicos;
 
 # **Requisitos**:
-- Circuito divisor de Divisor de tensão;
-- Resistor de LED;
-- Transistor como Chave;
-- Polarização básica do transistor;
-- Polarização por divisor de tensão na base do transistor;
-- Montagem Amplificador Inversor com amp-op;
-- Montagem Amplificador não inversor com amp-op;
-- Sair do programa;
+- Circuito divisor de Divisor de tensão (**Autor:** Matheus Andreoli);
+- Resistor de LED (**Autor:** Kaique Henrique);
+- Transistor como Chave (**Autor:** Matheus Andreoli);
+- Polarização básica do transistor (**Autor:** Yago Bastos);
+- Polarização por divisor de tensão na base do transistor (**Autor:** Kaique Henrique);
+- Montagem Amplificador Inversor com amp-op (**Autor:** Matheus Sales);
+- Montagem Amplificador não inversor com amp-op (**Autor:** Matheus Sales);
+- Sair do programa (Menu) (**Autor:** Yago Bastos);
 
 ### **Requisito: Circuito divisor de Divisor de tensão**:
 - Solicitar a tensão de entrada (Vs);
@@ -75,4 +75,10 @@
 - Tratar os possíveis erros;
 - Ao final, aguardar uma tecla e voltar para o menu;
 
-
+# Padrões de saída
+- Valores de entrada devem ser sempre float
+- Valores númericos decimais devem conter sempre 3 casas decimais (0,000)
+- Saída para valores de resistência devem ser retornados sempre em ohms
+- Saída para valores de corrente devem ser retornados sempre em amperes
+- Saída para valores de tensão devem ser retornados sempre em volts
+- Utilizar, sempre, cabeçalho padronizado no projeto
