@@ -48,7 +48,7 @@ void voltarMenu() { // Matheus Andreoli
 }
 
 void divisorDeTensao() { //Matheus Andreoli
-    float VS, VM, MAX_CURRENT, TOTAL_TENSION, R1, R2;
+    float VS, VM, MAX_CURRENT, TOTAL_RESISTANCE, R1, R2;
 
     printf("\t=> Divisão de tensão\n\n");
 
@@ -79,9 +79,9 @@ void divisorDeTensao() { //Matheus Andreoli
         scanf("%f", &MAX_CURRENT);
     }
 
-    TOTAL_TENSION = VS / MAX_CURRENT;
+    TOTAL_RESISTANCE = VS / MAX_CURRENT;
     R2 = VM / MAX_CURRENT;
-    R1 = TOTAL_TENSION - R2;
+    R1 = TOTAL_RESISTANCE - R2;
 
     printf("\n\tO valor da resistência R1 é: %.3f Ohm", R1);
     printf("\n\tO valor da resistência R2 é: %.3f Ohm\n", R2);
