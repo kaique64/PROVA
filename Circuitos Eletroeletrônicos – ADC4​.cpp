@@ -73,6 +73,12 @@ void divisorDeTensao() { //Matheus Andreoli
     printf("\tDigite o valor da corrente máxima do circuito (A): ");
     scanf("%f", &MAX_CURRENT);
 
+    while(MAX_CURRENT <= 0) {
+        printf("\n\tA corrente do circuito não pode ser menor ou igual a zero (0).\n");
+        printf("\tDigite o valor da corrente máxima do circuito (A): ");
+        scanf("%f", &MAX_CURRENT);
+    }
+
     TOTAL_TENSION = VS / MAX_CURRENT;
     R2 = VM / MAX_CURRENT;
     R1 = TOTAL_TENSION - R2;
