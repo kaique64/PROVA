@@ -6,7 +6,7 @@
     
     Grupo:
         Kaique Henrique     RA: 230023798
-        Matheus Andreoli    RA:
+        Matheus Andreoli    RA: 230022942
         Matheus Sales       RA:
         Yago Bastos         RA: 230023898
     
@@ -25,7 +25,9 @@
     
 */
 #include <stdio.h>
-char op;
+#include <stdlib.h>
+
+char op, fechar;
 void cabecalho() { //Yago Bastos
     printf("\t==========================================================\n");
     printf("\t\t    Circuitos Eletroeletrônicos – ADC4\n");
@@ -40,8 +42,45 @@ void limparTela() { //Yago Bastos
     #endif
 }
 
+void voltarMenu() { // Matheus Andreoli
+    printf("\n\tPressione qualquer tecla para voltar ao menu.");
+    scanf("%c%c", &fechar, &fechar); // aguarda uma tecla
+}
+
 void divisorDeTensao() { //Matheus Andreoli
-    
+    float VS, VM, MAX_CURRENT, TOTAL_TENSION, R1, R2;
+
+    printf("\t=> Divisão de tensão\n\n");
+
+    printf("\tDigite o valor da tensão de entrada VS (V): ");
+    scanf("%f", &VS);
+
+    while(VS <= 0) {
+        printf("\n\tA tensão de entrada VS não pode ser menor ou igual a zero (0).\n");
+        printf("\tDigite o valor da tensão de entrada VS (V): ");
+        scanf("%f", &VS);
+    }
+
+    printf("\tDigite o valor da tensão de saída VM (V): ");
+    scanf("%f", &VM);
+
+    while(VM > VS) {
+        printf("\n\tA tensão de saída VM não pode ser maior do que a tensão de entrada VS.\n");
+        printf("\tDigite o valor da tensão de saída VM (V): ");
+        scanf("%f", &VM);
+    }
+
+    printf("\tDigite o valor da corrente máxima do circuito (A): ");
+    scanf("%f", &MAX_CURRENT);
+
+    TOTAL_TENSION = VS / MAX_CURRENT;
+    R2 = VM / MAX_CURRENT;
+    R1 = TOTAL_TENSION - R2;
+
+    printf("\n\tO valor da resistência R1 é: %.3f Ohm", R1);
+    printf("\n\tO valor da resistência R2 é: %.3f Ohm\n", R2);
+
+    voltarMenu();
 }
 
 void resistorDeLED() { //Kaique Henrique
@@ -54,9 +93,9 @@ void transistorComoChave() { //Matheus Andreoli
 
 void polarizacaoBasicaDoTransistor() { //Yago Bastos
     float VS, VCC, VCE, Beta, IC, VBE = 0.7, RS, RC;
-    
+
     printf("\t=> Polarização básica do transistor\n\n");
-    
+
     printf("\tDigite o valor de VS (V): ");
     scanf("%f", &VS);
 
@@ -83,8 +122,7 @@ void polarizacaoBasicaDoTransistor() { //Yago Bastos
         printf("\tValor de RC: %.3f Ohm\n", RC);
     }
 
-    printf("\n\tPressione qualquer tecla para voltar ao menu.");
-    scanf("%s",&op); // aguarda uma tecla
+    voltarMenu();
 }
 
 void polarizacaoPorDivisorDeTensao() { //Kaique Henrique

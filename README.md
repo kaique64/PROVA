@@ -95,7 +95,7 @@
 
 # Padrões de saída
 - Valores de entrada devem ser sempre float
-- Valores númericos decimais devem conter sempre 3 casas decimais (0,000)
+- Valores numéricos decimais devem conter sempre 3 casas decimais (0,000)
 - Saída para valores de resistência devem ser retornados sempre em ohms
 - Saída para valores de corrente devem ser retornados sempre em amperes
 - Saída para valores de tensão devem ser retornados sempre em volts
