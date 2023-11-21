@@ -172,10 +172,45 @@ void polarizacaoPorDivisorDeTensao() { //Kaique Henrique
 }
 
 void montagemAmplificadorInversor() { //Matheus Sales
+    float Vi, Vo, R1, Rf;
     
+    printf("\t=>Montagem amplificador inveresor com amp-op\n\n");
+    
+    printf("\t digite o valor de Vi: ");
+    scanf("%f", &Vi);
+    
+    printf("\t digite o valor de Vo: ");
+    scanf("%f", &Vo);
+    
+    printf("\t digite o valor de R1: ");
+    scanf("%f", &R1);
+
+Rf = ((Vo / Vi)*-1) * R1;
+
+    printf("Valor de Rf:%.3f Ohm\n ", Rf);
+    
+    voltarMenu();
 }
 
 void montagemAmplificadorNaoInversor() { //Matheus Sales
+    float Vi, Vo, R1,Rf;
+    
+    printf("\t=>Montagem amplificador nao inveresor com amp-op\n\n");
+    
+    printf("\t digite o valor de Vi: ");
+    scanf("%f", &Vi);
+    
+    printf("\t digite o valor de Vo: ");
+    scanf("%f", &Vo);
+    
+    printf("\t digite o valor de R1: ");
+    scanf("%f", &R1);
+    
+    Rf = ((Vo / Vi)*-1) * R1;
+
+    printf("Valor de Rf:%.3f Ohm\n ", Rf);
+    
+    voltarMenu();
     
 }
 
