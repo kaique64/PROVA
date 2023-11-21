@@ -185,7 +185,7 @@ void montagemAmplificadorInversor() { //Matheus Sales
     printf("\t digite o valor de R1: ");
     scanf("%f", &R1);
 
-Rf = ((Vo / Vi)*-1) * R1;
+    Rf = ((Vo / Vi)*-1) * R1;
 
     printf("Valor de Rf:%.3f Ohm\n ", Rf);
     
@@ -211,7 +211,6 @@ void montagemAmplificadorNaoInversor() { //Matheus Sales
     printf("Valor de Rf:%.3f Ohm\n ", Rf);
     
     voltarMenu();
-    
 }
 
 int main() { //Yago Bastos
