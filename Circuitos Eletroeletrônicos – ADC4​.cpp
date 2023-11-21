@@ -7,7 +7,7 @@
     Grupo:
         Kaique Henrique     RA: 230023798
         Matheus Andreoli    RA: 230022942
-        Matheus Sales       RA:
+        Matheus Sales       RA: 230024102
         Yago Bastos         RA: 230023898
     
     - Objetivo:
