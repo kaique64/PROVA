@@ -94,7 +94,43 @@ void resistorDeLED() { //Kaique Henrique
 }
 
 void transistorComoChave() { //Matheus Andreoli
-    
+    float VS, VCC, IC, IB, VBE = 0.7, RS, RC, Bcc = 10;
+
+    printf("\tDigite o valor da tensão VS (V): ");
+    scanf("%f", &VS);
+
+    while(VS <= 0) {
+        printf("\n\tA tensão VS não pode ser menor ou igual a zero (0).\n");
+        printf("\tDigite o valor da tensão VS (V): ");
+        scanf("%f", &VS);
+    }
+
+    printf("\tDigite o valor da tensão VCC (V): ");
+    scanf("%f", &VCC);
+
+    while(VCC <= 0) {
+        printf("\n\tA tensão VCC não pode ser menor ou igual a zero (0).\n");
+        printf("\tDigite o valor da tensão VCC (V): ");
+        scanf("%f", &VCC);
+    }
+
+    printf("\tDigite o valor da corrente IC (A): ");
+    scanf("%f", &IC);
+
+    while(IC <= 0) {
+        printf("\n\tA corrente IC não pode ser menor ou igual a zero (0).\n");
+        printf("\tDigite o valor da corrente IC (A): ");
+        scanf("%f", &IC);
+    }
+
+    IB = IC / Bcc;
+    RS = (VS - VBE) / IB;
+    RC = VCC / IC;
+
+    printf("\n\tO valor da resistência RS é: %.3f Ohm", RS);
+    printf("\n\tO valor da resistência RC é: %.3f Ohm\n", RC);
+
+    voltarMenu();
 }
 
 void polarizacaoBasicaDoTransistor() { //Yago Bastos
