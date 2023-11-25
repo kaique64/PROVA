@@ -90,7 +90,33 @@ void divisorDeTensao() { //Matheus Andreoli
 }
 
 void resistorDeLED() { //Kaique Henrique
-    
+    float VF, correnteLED, tensaoLED, RLED;
+    printf("\t=>Resistor de LED\n\n");
+
+    printf("\tDigite a tensao de alimentacao VF (V): ");
+    if (scanf("%f", &VF) != 1) {
+        printf("\tEntrada invalida para a tensao de alimentacao VF.\n");
+    }
+
+    printf("\tDigite a corrente no LED (A): ");
+    if (scanf("%f", &correnteLED) != 1) {
+        printf("\tEntrada invalida para a corrente no LED.\n");
+    }
+
+    printf("\tDigite a tensao no LED (V): ");
+    if (scanf("%f", &tensaoLED) != 1) {
+        printf("\tEntrada invalida para a tensao no LED.\n");
+    }
+
+    // Verificando se a corrente ou a tensão do LED são zero para evitar divisão por zero
+    if (correnteLED == 0 || tensaoLED == 0) {
+        printf("\tA corrente ou a tensao no LED nao podem ser zero.\n");
+    }
+
+    RLED = (VF - tensaoLED) / correnteLED;
+
+    printf("\tO valor do resistor RLED é: %.2f Ohms\n", RLED);
+    voltarMenu();
 }
 
 void transistorComoChave() { //Matheus Andreoli
@@ -168,8 +194,50 @@ void polarizacaoBasicaDoTransistor() { //Yago Bastos
     voltarMenu();
 }
 
-void polarizacaoPorDivisorDeTensao() { //Kaique Henrique
-    
+float obterValor(const char *mensagem) {
+    float valor;
+    printf("\tDigite o valor de %s: ", mensagem);
+    while (scanf("%f", &valor) != 1) {
+        printf("\tEntrada invalida para %s. Digite novamente: ", mensagem);
+        while (getchar() != '\n'); // Limpar o buffer de entrada
+    }
+    return valor;
+}
+
+float calcularResistenciaR1(float VR1, float VR2, float R2) {
+    return VR1 / (VR2 / R2);
+}
+
+void polarizacaoPorDivisorDeTensao() {
+    float VCC, VCE, VRE, IC, Beta, VBE = 0.7;
+    float R1, R2, RC, RE;
+
+    VCC = obterValor("VCC");
+    VCE = obterValor("VCE");
+    VRE = obterValor("VRE");
+    IC = obterValor("IC");
+    Beta = obterValor("Beta do transistor");
+
+    float VRC = VCC - VCE - VRE;
+    RC = VRC / IC;
+    RE = VRE / IC;
+    R2 = 0.1 * Beta * RE;
+
+    float VE = VCC * 0.1;
+    float VR2 = VRE + VBE;
+    float VR1 = VCC - VR2;
+    float IR2 = VR2 / R2;
+
+    R1 = calcularResistenciaR1(VR1, VR2, R2);
+
+    // Exibindo os valores calculados
+    printf("\tValor de R1: %.2f\n", R1);
+    printf("\tValor de R2: %.2f\n", R2);
+    printf("\tValor de RC: %.2f\n", RC);
+    printf("\tValor de RE: %.2f\n", RE);
+
+    // Aguardar uma tecla antes de retornar
+    voltarMenu(); // Aguardar Enter
 }
 
 void montagemAmplificadorInversor() { //Matheus Sales
