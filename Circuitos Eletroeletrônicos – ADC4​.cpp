@@ -134,7 +134,7 @@ void transistorComoChave() { //Matheus Andreoli
 }
 
 void polarizacaoBasicaDoTransistor() { //Yago Bastos
-    float VS, VCC, VCE, Beta, IC, VBE = 0.7, RS, RC;
+    float VS, VCC, VCE, Beta, IC, VBE = 0.7, RS, RC,IB;
 
     printf("\t=> Polarização básica do transistor\n\n");
 
@@ -152,8 +152,9 @@ void polarizacaoBasicaDoTransistor() { //Yago Bastos
 
     printf("\tDigite o valor de IC de operação (A): ");
     scanf("%f", &IC);
-
-    RS = (VS - VBE) / IC;
+    
+    IB = IC / Beta;
+    RS = (VS - VBE) / IB;
     RC = (VCC - VCE) / IC;
 
     // Verificação de possíveis erros
@@ -176,18 +177,18 @@ void montagemAmplificadorInversor() { //Matheus Sales
     
     printf("\t=>Montagem amplificador inveresor com amp-op\n\n");
     
-    printf("\t digite o valor de Vi: ");
+    printf("\tDigite o valor de Vi: ");
     scanf("%f", &Vi);
     
-    printf("\t digite o valor de Vo: ");
+    printf("\tDigite o valor de Vo: ");
     scanf("%f", &Vo);
     
-    printf("\t digite o valor de R1: ");
+    printf("\tDigite o valor de R1: ");
     scanf("%f", &R1);
 
     Rf = ((Vo / Vi)*-1) * R1;
 
-    printf("Valor de Rf:%.3f Ohm\n ", Rf);
+    printf("\tValor de Rf: %.3f Ohm\n ", Rf);
     
     voltarMenu();
 }
@@ -197,18 +198,18 @@ void montagemAmplificadorNaoInversor() { //Matheus Sales
     
     printf("\t=>Montagem amplificador nao inveresor com amp-op\n\n");
     
-    printf("\t digite o valor de Vi: ");
+    printf("\tDigite o valor de Vi: ");
     scanf("%f", &Vi);
     
-    printf("\t digite o valor de Vo: ");
+    printf("\tDigite o valor de Vo: ");
     scanf("%f", &Vo);
     
-    printf("\t digite o valor de R1: ");
+    printf("\tDigite o valor de R1: ");
     scanf("%f", &R1);
     
-    Rf = ((Vo / Vi)*-1) * R1;
+    Rf = R1*((Vo / Vi)-1);
 
-    printf("Valor de Rf:%.3f Ohm\n ", Rf);
+    printf("\tValor de Rf: %.3f Ohm\n ", Rf);
     
     voltarMenu();
 }
@@ -232,14 +233,17 @@ int main() { //Yago Bastos
         switch(opcao) {
             case 1:
                 limparTela();
+                cabecalho();
                 divisorDeTensao();
                 break;
             case 2:
                 limparTela();
+                cabecalho();
                 resistorDeLED();
                 break;
             case 3:
                 limparTela();
+                cabecalho();
                 transistorComoChave();
                 break;
             case 4:
@@ -249,14 +253,17 @@ int main() { //Yago Bastos
                 break;
             case 5:
                 limparTela();
+                cabecalho();
                 polarizacaoPorDivisorDeTensao();
                 break;
             case 6:
                 limparTela();
+                cabecalho();
                 montagemAmplificadorInversor();
                 break;
             case 7:
                 limparTela();
+                cabecalho();
                 montagemAmplificadorNaoInversor();
                 break;
             case 8:
@@ -275,4 +282,3 @@ int main() { //Yago Bastos
 
     return 0;
 }
-
