@@ -29,6 +29,7 @@
 
 char op, fechar;
 void cabecalho() { //Yago Bastos
+    limparTela();
     printf("\t==========================================================\n");
     printf("\t\t    Circuitos Eletroeletrônicos – ADC4\n");
     printf("\t==========================================================\n\n");
@@ -91,7 +92,7 @@ void divisorDeTensao() { //Matheus Andreoli
 
 void resistorDeLED() { //Kaique Henrique
     float VF, correnteLED, tensaoLED, RLED;
-    printf("\t=>Resistor de LED\n\n");
+    printf("\t=> Resistor de LED\n\n");
 
     printf("\tDigite a tensao de alimentacao VF (V): ");
     if (scanf("%f", &VF) != 1) {
@@ -121,7 +122,8 @@ void resistorDeLED() { //Kaique Henrique
 
 void transistorComoChave() { //Matheus Andreoli
     float VS, VCC, IC, IB, VBE = 0.7, RS, RC, Bcc = 10;
-
+    
+    printf("\t=> Transistor como Chave\n\n");
     printf("\tDigite o valor da tensão VS (V): ");
     scanf("%f", &VS);
 
@@ -194,7 +196,7 @@ void polarizacaoBasicaDoTransistor() { //Yago Bastos
     voltarMenu();
 }
 
-float obterValor(const char *mensagem) {
+float obterValor(const char *mensagem) { //Kaique Henrique
     float valor;
     printf("\tDigite o valor de %s: ", mensagem);
     while (scanf("%f", &valor) != 1) {
@@ -204,14 +206,15 @@ float obterValor(const char *mensagem) {
     return valor;
 }
 
-float calcularResistenciaR1(float VR1, float VR2, float R2) {
+float calcularResistenciaR1(float VR1, float VR2, float R2) { //Kaique Henrique
     return VR1 / (VR2 / R2);
 }
 
-void polarizacaoPorDivisorDeTensao() {
+void polarizacaoPorDivisorDeTensao() { //Kaique Henrique
     float VCC, VCE, VRE, IC, Beta, VBE = 0.7;
     float R1, R2, RC, RE;
-
+    
+    printf("\t=> Polarização por divisor de tensão na base do transistor\n\n");
     VCC = obterValor("VCC");
     VCE = obterValor("VCE");
     VRE = obterValor("VRE");
@@ -231,7 +234,7 @@ void polarizacaoPorDivisorDeTensao() {
     R1 = calcularResistenciaR1(VR1, VR2, R2);
 
     // Exibindo os valores calculados
-    printf("\tValor de R1: %.2f\n", R1);
+    printf("\n\tValor de R1: %.2f\n", R1);
     printf("\tValor de R2: %.2f\n", R2);
     printf("\tValor de RC: %.2f\n", RC);
     printf("\tValor de RE: %.2f\n", RE);
@@ -243,7 +246,7 @@ void polarizacaoPorDivisorDeTensao() {
 void montagemAmplificadorInversor() { //Matheus Sales
     float Vi, Vo, R1, Rf;
     
-    printf("\t=>Montagem amplificador inveresor com amp-op\n\n");
+    printf("\t=> Montagem amplificador inveresor com amp-op\n\n");
     
     printf("\tDigite o valor de Vi: ");
     scanf("%f", &Vi);
@@ -256,7 +259,7 @@ void montagemAmplificadorInversor() { //Matheus Sales
 
     Rf = ((Vo / Vi)*-1) * R1;
 
-    printf("\tValor de Rf: %.3f Ohm\n ", Rf);
+    printf("\n\tValor de Rf: %.3f Ohm\n ", Rf);
     
     voltarMenu();
 }
@@ -264,7 +267,7 @@ void montagemAmplificadorInversor() { //Matheus Sales
 void montagemAmplificadorNaoInversor() { //Matheus Sales
     float Vi, Vo, R1,Rf;
     
-    printf("\t=>Montagem amplificador nao inveresor com amp-op\n\n");
+    printf("\t=> Montagem amplificador nao inveresor com amp-op\n\n");
     
     printf("\tDigite o valor de Vi: ");
     scanf("%f", &Vi);
@@ -277,7 +280,7 @@ void montagemAmplificadorNaoInversor() { //Matheus Sales
     
     Rf = R1*((Vo / Vi)-1);
 
-    printf("\tValor de Rf: %.3f Ohm\n ", Rf);
+    printf("\n\tValor de Rf: %.3f Ohm\n ", Rf);
     
     voltarMenu();
 }
@@ -344,7 +347,7 @@ int main() { //Yago Bastos
                 cabecalho();
                 printf("\tOpção inválida.\n");
                 printf("\tAperte qualquer tecla para voltar.");
-                scanf("%s",&op);
+                scanf("%c%c",&fechar,&fechar);
         }
     } while(opcao != 8);
 
